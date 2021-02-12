@@ -232,7 +232,8 @@ n_train = x_train.shape[0] - n_test
             inputv_train = np.ascontiguousarray(inputv_train)
             target_train = np.ascontiguousarray(target_train)
 
-            try:
+            #try:
+            if True:
                 self.neural_net.train()
                 self._one_epoch(True, self.cur_batch_size, inputv_train,
                                 target_train, optimizer, criterion)
@@ -279,7 +280,8 @@ n_train = x_train.shape[0] - n_test
                         break
 
                 self.epoch_count += 1
-            except RuntimeError as err:
+            else:
+            #except RuntimeError as err:
                 #if self.epoch_count == 0:
                 #    raise err
                 if self.verbose >= 2:
