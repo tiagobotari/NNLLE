@@ -301,13 +301,13 @@ n_train = x_train.shape[0] - n_test
                 self.epoch_count = 0
 
                 continue
-            except KeyboardInterrupt:
-                if self.epoch_count > 0 and self.es:
-                    print("Keyboard interrupt detected.",
-                          "Switching weights to lowest validation loss",
-                          "and exiting")
-                    self.neural_net.load_state_dict(best_state_dict)
-                break
+#             except KeyboardInterrupt:
+#                 if self.epoch_count > 0 and self.es:
+#                     print("Keyboard interrupt detected.",
+#                           "Switching weights to lowest validation loss",
+#                           "and exiting")
+#                     self.neural_net.load_state_dict(best_state_dict)
+#                 break
 
         self.elapsed_time = time.time() - start_time
         if self.verbose >= 1:
